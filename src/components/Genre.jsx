@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 function Genre() {
     let [text, setText]= useState(null)
   const fetchData =() =>{
-    let apiUrl="http://localhost:1337/api/genres?populate=*"
+    let apiUrl="https://strapi-movie-backend.onrender.com/api/genres?populate=*"
     fetch(apiUrl)
     .then((response)=>{
       return response.json()

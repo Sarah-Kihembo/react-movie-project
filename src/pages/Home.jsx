@@ -11,7 +11,7 @@ import Favourite from "../components/Favourite";
 function Home() {
   let [text, setText]= useState(null)
   const fetchData =() =>{
-    let apiUrl="http://localhost:1337/api/herosections?populate=*"
+    let apiUrl="https://strapi-movie-backend.onrender.com/api/herosections?populate=*"
     fetch(apiUrl)
     .then((response)=>{
       return response.json()

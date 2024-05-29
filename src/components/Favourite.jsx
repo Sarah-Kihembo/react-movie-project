@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 function Favourite() {
   let [text, setText] = useState(null);
   const fetchData = () => {
-    let apiUrl = "http://localhost:1337/api/favourites?populate=*";
+    let apiUrl = "https://strapi-movie-backend.onrender.com/api/favourites?populate=*";
     fetch(apiUrl)
       .then((response) => {
         return response.json();
