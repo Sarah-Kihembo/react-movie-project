@@ -7,7 +7,7 @@ function FavCard(props){
             <div>
                 <img className="w-full rouded-t-lg" src={props.image} alt="card picture" />
             </div>
-             <Link to={props.link}> <h2 className="text-2xl font-bold text-white p-4">{props.fav}</h2></Link>
+             <Link to={props.link}> <h2 className="text-2xl font-bold text-white p-4">{props.title}</h2></Link>
         </div>
     )
 }

@@ -1,14 +1,11 @@
 import React from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import ActionCard from "../components/ActionCard";
+import FavCard from "./FavCard";
 import { useState, useEffect } from "react";
 
-
-function Action() {
+function Favourite() {
   let [text, setText] = useState(null);
   const fetchData = () => {
-    let apiUrl = "http://localhost:1337/api/actions?populate=*";
+    let apiUrl = "http://localhost:1337/api/favourites?populate=*";
     fetch(apiUrl)
       .then((response) => {
         return response.json();
@@ -22,17 +19,15 @@ function Action() {
     fetchData();
   }, []);
   return (
-    <div className="bg-teal-900">
-      <Header />
-      <div className="bg-teal-900">
+    <div>
       <h1 className="font-sans text-white text-5xl text-center p-8 font-bold mb-4">
-        Science Fiction
+        Favourites
       </h1>
-      <section className="w-[70%] m-auto pb-[17%] flex justify-around">
+      <section className="hover:cursor-pointer w-[70%] m-auto pb-8 flex justify-around">
         {text !== null ? (
           text.map((item, index) => {
             return (
-              <ActionCard
+              <FavCard
                 key={index}
                 title={item.attributes.title}
                 image={`http://localhost:1337${item.attributes.image.data.attributes.url}`}
@@ -44,10 +39,8 @@ function Action() {
           <p>loading...</p>
         )}
       </section>
-      </div>
-      <Footer />
     </div>
   );
 }
 
-export default Action;
+export default Favourite;
