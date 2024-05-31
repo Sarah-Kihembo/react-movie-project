@@ -24,7 +24,7 @@ function Home() {
     fetchData();
   }, []);
   return (
-    <div className="mx-8 bg-teal-900">
+    <div className="mx-8 bg-teal-900 ">
       <Header />
       <div>
         {text !== null ? (
