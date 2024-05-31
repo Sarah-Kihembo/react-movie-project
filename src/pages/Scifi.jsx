@@ -37,7 +37,7 @@ function Scifi() {
                 <ScifiCard
                   key={index}
                   title={item.attributes.title}
-                  image={`http://localhost:1337${item.attributes.image.data.attributes.url}`}
+                  image={item.attributes.image.data.attributes.url}
                   link={item.attributes.to}
                 />
               );

@@ -6,53 +6,47 @@ import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
 import Favourite from "../components/Favourite";
 
-
-
 function Home() {
-  let [text, setText]= useState(null)
-  const fetchData =() =>{
-    let apiUrl="https://strapi-movie-backend.onrender.com/api/herosections?populate=*"
+  let [text, setText] = useState(null);
+  const fetchData = () => {
+    let apiUrl =
+      "https://strapi-movie-backend.onrender.com/api/herosections?populate=*";
     fetch(apiUrl)
-    .then((response)=>{
-      return response.json()
-    })
-    .then((dataObject)=>{
-      let content=dataObject.data
-      setText(content)
-    })
-    
-  }
-  useEffect(()=>{
-    fetchData()
-  },[])
+      .then((response) => {
+        return response.json();
+      })
+      .then((dataObject) => {
+        let content = dataObject.data;
+        setText(content);
+      });
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <div className="mx-8 bg-teal-900">
       <Header />
       <div>
-      {
-        text!== null ?(
-          text.map((item,index)=>{
+        {text !== null ? (
+          text.map((item, index) => {
             return (
               <HeroSection
-              key={index}
-      title={item.attributes.title}
-      description={item.attributes.description}
-      image={`http://localhost:1337${item.attributes.image.data.attributes.url}`}
-      />
-            )
+                key={index}
+                title={item.attributes.title}
+                description={item.attributes.description}
+                image={item.attributes.image.data.attributes.url}
+              />
+            );
           })
-        ):
+        ) : (
           <p>loading...</p>
-        
-      }
+        )}
       </div>
-      
-      <Genre />
-      
-      <Favourite />
-      
 
-      
+      <Genre />
+
+      <Favourite />
+
       <Footer />
     </div>
   );
