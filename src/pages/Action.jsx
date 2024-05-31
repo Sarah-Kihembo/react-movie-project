@@ -28,7 +28,7 @@ function Action() {
       <h1 className="font-sans text-white text-5xl text-center p-8 font-bold mb-4">
         Action
       </h1>
-      <section className="w-[70%] m-auto pb-[17%] flex justify-around">
+      <section className="w-[70%] m-auto pb-[17%] flex justify-around phone:flex-wrap">
         {text !== null ? (
           text.map((item, index) => {
             return (
