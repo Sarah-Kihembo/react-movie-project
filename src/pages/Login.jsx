@@ -9,7 +9,7 @@ return (
     <div className="bg-teal-900">
     <Header/>
         <h1 className="font-sans text-white text-5xl text-center p-8 font-bold mb-4">Login</h1>
-        <div className="bg-teal-700">
+        <div className="bg-teal-900">
             <form>
                 <div className="mb-[2rem]">
                     <label className="ml-[45%] text-white font-sans text-xl font-bold" htmlFor="username">Username</label>
